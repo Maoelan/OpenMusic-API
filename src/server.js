@@ -14,8 +14,8 @@ const init = async () => {
   const songsService = new SongsService();
 
   const server = Hapi.server({
-    port: process.env.PORT,
-    host: process.env.HOST,
+    port: process.env.PORT || 3000,
+    host: process.env.HOST || 'localhost',
     routes: {
       cors: {
         origin: ['*'],
@@ -44,10 +44,14 @@ const init = async () => {
     const { response } = request;
 
     if (response instanceof ClientError) {
-      return h.response({
-        status: 'fail',
-        message: response.message,
-      }).code(response.statusCode);
+      if (response instanceof ClientError) {
+        const newResponse = h.response({
+          status: 'fail',
+          message: response.message,
+        });
+        newResponse.code(response.statusCode);
+        return newResponse;
+      }
     }
 
     return h.continue;
