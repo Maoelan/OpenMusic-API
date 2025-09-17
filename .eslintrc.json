@@ -4,10 +4,15 @@
     "es2022": true,
     "node": true
   },
-  "extends": ["google"],
+  "extends": ["airbnb-base"],
   "parserOptions": {
     "ecmaVersion": 2022,
     "sourceType": "module"
   },
-  "rules": {}
+  "rules": {
+    "linebreak-style": ["error", "windows"],
+    "no-console": "off",
+    "no-underscore-dangle": ["error", { "allowAfterThis": true }],
+    "camelcase": ["error", { "properties": "never", "ignoreDestructuring": true }]
+  }
 }
