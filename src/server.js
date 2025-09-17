@@ -14,8 +14,8 @@ const init = async () => {
   const songsService = new SongsService();
 
   const server = Hapi.server({
-    port: process.env.PORT,
-    host: process.env.HOST,
+    port: process.env.PORT || 3000,
+    host: process.env.HOST || 'localhost',
     routes: {
       cors: {
         origin: ['*'],
@@ -52,17 +52,6 @@ const init = async () => {
         newResponse.code(response.statusCode);
         return newResponse;
       }
-
-      if (!response.isServer) {
-        return h.continue;
-      }
-
-      const newResponse = h.response({
-        status: 'error',
-        message: 'Terjadi kegagalan pada server kami',
-      });
-      newResponse.code(500);
-      return newResponse;
     }
 
     return h.continue;
