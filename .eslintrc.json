@@ -10,7 +10,6 @@
     "sourceType": "module"
   },
   "rules": {
-    "linebreak-style": ["error", "windows"],
     "no-console": "off",
     "no-underscore-dangle": ["error", { "allowAfterThis": true }],
     "camelcase": ["error", { "properties": "never", "ignoreDestructuring": true }]

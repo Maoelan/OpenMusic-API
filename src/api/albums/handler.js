@@ -19,6 +19,7 @@ class AlbumsHandler {
       message: 'Album berhasil ditambahkan',
       data: { albumId },
     });
+
     response.code(201);
     return response;
   }
