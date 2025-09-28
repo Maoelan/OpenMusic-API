@@ -5,7 +5,7 @@ exports.up = (pgm) => {
       primaryKey: true,
     },
     name: {
-      type: 'VARCHAR(50)',
+      type: 'VARCHAR(255)',
       notNull: true,
     },
     year: {
