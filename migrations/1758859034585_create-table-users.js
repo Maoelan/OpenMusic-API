@@ -10,11 +10,11 @@ exports.up = (pgm) => {
       notNull: true,
     },
     password: {
-      type: 'TEXT',
+      type: 'VARCHAR(100)',
       notNull: true,
     },
     fullname: {
-      type: 'TEXT',
+      type: 'VARCHAR(150)',
       notNull: true,
     },
   });
