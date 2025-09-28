@@ -16,7 +16,9 @@ const UsersService = require('./services/users/UsersService');
 const UsersValidator = require('./validator/users');
 
 const authentications = require('./api/authentications');
-const AuthenticationsService = require('./services/authentications/AuthenticationsService');
+const AuthenticationsService = require(
+  './services/authentications/AuthenticationsService',
+);
 const TokenManager = require('./tokenize/TokenManager');
 const AuthenticationsValidator = require('./validator/authentications');
 
