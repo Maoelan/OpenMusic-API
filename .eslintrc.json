@@ -12,6 +12,7 @@
   "rules": {
     "no-console": "off",
     "no-underscore-dangle": ["error", { "allowAfterThis": true }],
-    "camelcase": ["error", { "properties": "never", "ignoreDestructuring": true }]
+    "camelcase": ["error", { "properties": "never", "ignoreDestructuring": true }],
+    "max-len": ["error", { "code": 80, "ignoreComments": true, "ignoreUrls": true, "ignoreTemplateLiterals": true }]
   }
 }
