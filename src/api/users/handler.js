@@ -8,18 +8,16 @@ class UsersHandler {
     autoBind(this);
   }
 
-  async postUserHandler(requst, h) {
-    this._validator.validateUserPayload(requst.payload);
-    const { username, password, fullname } = requst.payload;
+  async postUserHandler(request, h) {
+    this._validator.validateUserPayload(request.payload);
+    const { username, password, fullname } = request.payload;
 
     const userId = await this._service.addUser({ username, password, fullname });
 
     const response = h.response({
       status: 'success',
       message: 'User berhasil ditambahkan',
-      data: {
-        userId,
-      },
+      data: { userId },
     });
     response.code(201);
     return response;
@@ -31,9 +29,7 @@ class UsersHandler {
 
     return {
       status: 'success',
-      data: {
-        user,
-      },
+      data: { user },
     };
   }
 
@@ -43,9 +39,7 @@ class UsersHandler {
 
     return {
       status: 'success',
-      data: {
-        users,
-      },
+      data: { users },
     };
   }
 }
