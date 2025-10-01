@@ -2,7 +2,7 @@ require('dotenv').config();
 
 const Hapi = require('@hapi/hapi');
 const Jwt = require('@hapi/jwt');
-const config = require('./utils/config');
+const config = require('./utils/config/config');
 
 const albums = require('./api/albums');
 const AlbumsService = require('./services/albums/AlbumsService');
