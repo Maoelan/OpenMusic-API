@@ -35,7 +35,7 @@ const CollaborationsValidator = require('./validator/collaborations');
 
 const _export = require('./api/exports');
 const ProducerService = require('./services/rabbitmq/ProducerService');
-const ExporsValidator = require('./validator/exports');
+const ExportsValidator = require('./validator/exports');
 
 const ClientError = require('./exceptions/ClientError');
 
@@ -129,8 +129,9 @@ const init = async () => {
     {
       plugin: _export,
       options: {
-        service: ProducerService,
-        validator: ExporsValidator,
+        playlistsService,
+        producerService: ProducerService,
+        validator: ExportsValidator,
       },
     },
   ]);

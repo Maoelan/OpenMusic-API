@@ -1,13 +1,13 @@
 const config = {
   app: {
-    host: process.env.HOST || 'localhost',
+    host: process.env.HOST,
     port: process.env.PORT || 3000,
   },
   rabbitMq: {
-    server: process.env.RABBITMQ_SERVER || 'amqp://localhost',
+    server: process.env.RABBITMQ_SERVER,
   },
   redis: {
-    host: process.env.REDIS_SERVER || 'localhost',
+    host: process.env.REDIS_SERVER,
   },
 };
 

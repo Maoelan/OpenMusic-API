@@ -3,8 +3,8 @@ const config = require('../../utils/config/config');
 
 const ProducerService = {
   sendMessage: async (queue, message) => {
-    const connection = await amqp.connect();
-    const channel = await connection.createChannel(config.rabbitMq.server);
+    const connection = await amqp.connect(config.rabbitMq.server);
+    const channel = await connection.createChannel();
     await channel.assertQueue(queue, {
       durable: true,
     });

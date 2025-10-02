@@ -4,4 +4,4 @@ const ExportPlaylistsPayloadSchema = Joi.object({
   targetEmail: Joi.string().email({ tlds: true }).required(),
 });
 
-module.exports = { ExportPlaylistsPayloadSchema };
+module.exports = ExportPlaylistsPayloadSchema;
