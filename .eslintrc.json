@@ -11,7 +11,7 @@
   },
   "rules": {
     "no-console": "off",
-    "no-underscore-dangle": ["error", { "allowAfterThis": true }],
+    "no-underscore-dangle": ["error", { "allow": ["_export"], "allowAfterThis": true }],
     "camelcase": ["error", { "properties": "never", "ignoreDestructuring": true }]
   }
 }
