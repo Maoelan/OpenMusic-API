@@ -52,12 +52,15 @@ const ClientError = require('./exceptions/ClientError');
 
 const init = async () => {
   const cacheService = new CacheService();
-  const albumsService = new AlbumsService();
-  const songsService = new SongsService();
+  const albumsService = new AlbumsService(cacheService);
+  const songsService = new SongsService(cacheService);
   const usersService = new UsersService();
   const authenticationsService = new AuthenticationsService();
-  const collaborationsService = new CollaborationsService();
-  const playlistsService = new PlaylistsService(collaborationsService);
+  const collaborationsService = new CollaborationsService(cacheService);
+  const playlistsService = new PlaylistsService(
+    collaborationsService,
+    cacheService,
+  );
   const storageService = new StorageService(
     path.resolve(__dirname, 'api/albums/file/covers'),
   );
